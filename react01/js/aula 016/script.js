@@ -8,7 +8,7 @@
 
 var nome = '';
 
-if( typeof localStorage.nome == 'undefined'){
+if( typeof localStorage.nome == 'undefined' || localStorage.nome == 'null' ){
     localStorage.nome = prompt("Digite seu nome : ");
 }
 nome = localStorage.nome;
