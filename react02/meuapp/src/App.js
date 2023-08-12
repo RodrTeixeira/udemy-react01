@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useMemo} from 'react';
+import React, { useState, useEffect, useMemo, useCallback} from 'react';
 
 function App() {
 
     const [tarefas, setTarefas] = useState([
       'Pagar a conta de luz',
       'Estudar React Hooks',
+      'Passar na padaria',
+      'Verificar o óleo do carro',
     ]);
 
     const [input, setInput] = useState('');
@@ -20,10 +22,10 @@ function App() {
       localStorage.setItem('tarefas', JSON.stringify(tarefas));
     }, [tarefas])
 
-    function handleAdd(){
+    const handleAdd = useCallback(() => {
       setTarefas([...tarefas, input])
       setInput('');
-    }
+    }, [input, tarefas]);
 
     const totalTarefas = useMemo(() => tarefas.length, [tarefas])
 
