@@ -7,6 +7,8 @@ function Home() {
       <span>Sujeito Programador</span><br/><br/>
       <Link to="/sobre" >Sobre</Link><br/><br/>
       <Link to="/contato" >Contato</Link>
+      <hr/>
+      <Link to="/produto/123">Acessar Produto 123</Link>
     </div>
   )
 }
