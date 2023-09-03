@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./favoritos.css";
 
 function Favoritos(){
@@ -17,7 +18,10 @@ function Favoritos(){
                     return(
                         <li key={item.id}>
                             <span>{item.title}</span>
-
+                            <div>
+                                <Link to={`/filme/${item.id}`}>Ver Detalhes</Link>
+                                <button>Excluir</button>
+                            </div>
                         </li>
                     )
                 })}
