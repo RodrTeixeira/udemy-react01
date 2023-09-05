@@ -15,12 +15,13 @@ function Favoritos(){
             return (item.id !== id)
         })
         setFilmes(filtroFilmes);
-        localStorage.setItem("@primeflix", )
+        localStorage.setItem("@primeflix", JSON.stringify(filtroFilmes) )
     }
 
     return(
         <div className="meus-filmes">
             <h1>Meus Filmes</h1>
+            {filmes.length === 0 && <span>Você não possui nenhum filme salvo :(</span>}
             <ul>
                 {filmes.map((item) => {
                     return(
