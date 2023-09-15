@@ -75,7 +75,10 @@ function App() {
       autor: autor,
     })
     .then(() => {
-
+      console.log("POST ATUALIZADO!");
+      setIdPost("");
+      setTitulo("");
+      setAutor("");
     })
     .catch((error) => {
       console.log("ERRO AO ATUALIZAR O POST! "+error)
