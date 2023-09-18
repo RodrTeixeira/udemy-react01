@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { db } from "./firebaseConnection";
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc} from "firebase/firestore";
 import "./app.css";
@@ -9,6 +9,13 @@ function App() {
   const [idPost, setIdPost] = useState("");
 
   const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function loadPosts(){
+      
+    }
+    loadPosts();
+  }, [])
 
   async function handleAdd(){
     // await setDoc(doc(db, "posts", "12345"), {
