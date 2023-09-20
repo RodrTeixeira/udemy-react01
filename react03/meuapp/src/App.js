@@ -7,6 +7,8 @@ function App() {
   const [titulo, setTitulo] = useState("");
   const [autor, setAutor] = useState("");
   const [idPost, setIdPost] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
 
   const [posts, setPosts] = useState([]);
 
@@ -117,6 +119,24 @@ function App() {
     <div>
       <h1>ReactJS + Firebase :)</h1> 
       <div className="container">
+        <h2>Usuários</h2>
+        <label>Email</label>
+        <input 
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Digite um Email"
+        /><br/>
+        <label>Senha</label>
+        <input 
+          value={senha}
+          onChange={(e) => setSenha(e.target.value)}
+          placeholder="Informe uma Senha"
+        /><br/>
+      </div>
+      <br/>
+      <hr/>
+      <div className="container">
+        <h2>Posts</h2>
         <label>ID do post:</label>
         <input 
           placeholder="Digite o ID do post"
