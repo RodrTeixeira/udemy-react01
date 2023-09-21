@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { db } from "./firebaseConnection";
+import { db, auth } from "./firebaseConnection";
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot} from "firebase/firestore";
 import "./app.css";
+import { createUserWithEmailAndPassword } from "firebase/auth"
+
 function App() {
 
   const [titulo, setTitulo] = useState("");
@@ -115,6 +117,22 @@ function App() {
     })
   }
 
+  async function novoUsuario(){
+    await createUserWithEmailAndPassword(auth, email, senha)
+    .then(() => {
+      console.log("CADASTRADO LOGIN COM SUCESSO! ");
+      setEmail("");
+      setSenha("");
+    })
+    .catch((error) => {
+      if (error.code === "auth/weak-password"){
+        alert("Senha muito fraca!")
+      } else if(error.code === "auth/email-already-in-use"){
+        alert("Email já cadastrado!")
+      }
+    })
+  }
+
   return (
     <div>
       <h1>ReactJS + Firebase :)</h1> 
@@ -132,6 +150,7 @@ function App() {
           onChange={(e) => setSenha(e.target.value)}
           placeholder="Informe uma Senha"
         /><br/>
+        <button onClick={novoUsuario}>Cadastrar</button>
       </div>
       <br/>
       <hr/>
