@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { db, auth } from "./firebaseConnection";
 import { doc, setDoc, collection, addDoc, getDoc, getDocs, updateDoc, deleteDoc, onSnapshot} from "firebase/firestore";
 import "./app.css";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth"
 
 function App() {
 
@@ -153,13 +153,22 @@ function App() {
     })
   }
 
+  async function fazerLogout(){
+    await signOut(auth)
+    setUser(false);
+    setUserDetail({});
+  }
+
   return (
     <div>
       <h1>ReactJS + Firebase :)</h1> 
       { user && (
         <div>
           <strong>Seja Bem-vindo</strong><br/>
-          <span>ID: {userDetail.uid}</span>
+          <span>ID: {userDetail.uid} - Email: {userDetail.email}</span>
+          <br/><br/>
+          <button onClick={fazerLogout}>Sair da conta</button>
+          <br/><br/>
         </div>
       )}
       <div className="container">
