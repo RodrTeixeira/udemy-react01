@@ -14,3 +14,7 @@ https://github.com/RodrTeixeira
 
 https://www.udemy.com/course/curso-reactjs/learn/lecture/25604752#overview
 
+git add .
+
+git commit -am ":zap: pequena mensagem"
+
