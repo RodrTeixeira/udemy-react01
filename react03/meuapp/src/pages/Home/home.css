@@ -1,0 +1,25 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.home-container h1 {
+    font-size: 48px;
+    margin-bottom: 8px;
+}
+
+.home-container span {
+    margin-bottom: 28px;
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+}
