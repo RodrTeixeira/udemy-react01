@@ -1,11 +1,16 @@
 import { useState } from "react";
 import "./admin.css";
+import { auth } from "../../firebaseConnection";
+import { signOut } from "firebase/auth";
 
 export default function Admin() {
     const [tarefaInput, setTarefaInput] = useState("")
     function handleRegister(e){
         e.preventDefault();
         alert("CLICOU")
+    }
+    async function handleLogout(){
+        await signOut(auth);
     }
     return(
         <div className="admin-container">
@@ -25,7 +30,7 @@ export default function Admin() {
                     <button className="btn-delete">Concluir</button>
                 </div>
             </article>
-            <button className="btn-logout">Sair</button>
+            <button className="btn-logout" onClick={handleLogout}>Sair</button>
         </div>
     )
 }

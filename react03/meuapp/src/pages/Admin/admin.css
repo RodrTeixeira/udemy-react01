@@ -27,3 +27,40 @@
     justify-content: center;
     padding: 14px 8px;
 }
+
+.list p{
+    margin-bottom: 8px;
+
+}
+
+.list button{
+    margin-right: 8px;
+    border: 0;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.btn-delete{
+    color: #ffcc23;
+    background-color: transparent;
+
+}
+
+.btn-logout{
+    position: absolute;
+    bottom: 6%;
+    left: 4%;
+    height: 60px;
+    width: 60px;
+    border-radius: 30px;
+    border: 0;
+    font-weight: bold;
+    background-color: rgba(218, 38, 41, 0.35);
+    color: #fafafa;
+    transition: all 0.5s;
+}
+
+.btn-logout:hover{
+    background-color: rgba(218, 38, 41, 1);
+    color: #fff;
+}
