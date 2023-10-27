@@ -1,13 +1,22 @@
 import { useState } from "react";
 import "./admin.css";
-import { auth } from "../../firebaseConnection";
+import { auth,db } from "../../firebaseConnection";
 import { signOut } from "firebase/auth";
+import {
+    addDoc,
+    collection
+} from "firebase/firestore";
 
 export default function Admin() {
     const [tarefaInput, setTarefaInput] = useState("")
-    function handleRegister(e){
+    
+    async function handleRegister(e){
         e.preventDefault();
-        alert("CLICOU")
+        if(tarefaInput === ''){
+            alert("Digite sua tarefa...")
+            return;
+        }
+        await addDoc(collection(db, "tarefas"))
     }
     async function handleLogout(){
         await signOut(auth);
