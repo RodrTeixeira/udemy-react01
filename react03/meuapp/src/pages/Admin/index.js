@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./admin.css";
 import { auth,db } from "../../firebaseConnection";
 import { signOut } from "firebase/auth";
@@ -9,6 +9,15 @@ import {
 
 export default function Admin() {
     const [tarefaInput, setTarefaInput] = useState("")
+    const [user, setUser] = useState({})
+
+    useEffect(() => {
+        async function loadTarefas(){
+            const userDetail = localStorage.getItem("@detailUser")
+            setUser(JSON.parse(userDetail))
+        }
+        loadTarefas();
+    }, [])
     
     async function handleRegister(e){
         e.preventDefault();
@@ -16,7 +25,11 @@ export default function Admin() {
             alert("Digite sua tarefa...")
             return;
         }
-        await addDoc(collection(db, "tarefas"))
+        await addDoc(collection(db, "tarefas", {
+            tarefa: tarefaInput,
+            created: new Date(),
+            userUid: user?.uid
+        }))
     }
     async function handleLogout(){
         await signOut(auth);
