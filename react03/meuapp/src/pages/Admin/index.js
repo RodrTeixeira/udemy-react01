@@ -25,11 +25,18 @@ export default function Admin() {
             alert("Digite sua tarefa...")
             return;
         }
-        await addDoc(collection(db, "tarefas", {
+        await addDoc(collection(db, "tarefas"), {
             tarefa: tarefaInput,
             created: new Date(),
             userUid: user?.uid
-        }))
+        })
+        .then(() => {
+            console.log("TAREFA REGISTRADA! ")
+            setTarefaInput("");
+        })
+        .catch((error) => {
+            console.log("ERRO AO REGISTRAR! "+ error)
+        })
     }
     async function handleLogout(){
         await signOut(auth);
