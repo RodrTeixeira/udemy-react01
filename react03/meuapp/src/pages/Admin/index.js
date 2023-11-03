@@ -10,7 +10,8 @@ import {
     orderBy,
     where,
     doc,
-    deleteDoc
+    deleteDoc,
+    updateDoc
 } from "firebase/firestore";
 
 export default function Admin() {
@@ -84,6 +85,23 @@ export default function Admin() {
     function editTarefa(item){
         setTarefaInput(item.tarefa);
         setEdit(item);
+    }
+
+    async function handleUpdateTarefa(){
+        const docRef = doc(db, "tarefas", edit?.id)
+        await updateDoc(docRef, {
+            tarefa: tarefaInput            
+        })
+        .then(() => {
+            console.log("TAREFA ATUALIZADA! ")
+            setTarefaInput("")
+            setEdit({})
+        })
+        .catch(() => {
+            console.log("ERRO AO ATUALIZAR! ")
+            setTarefaInput("")
+            setEdit({})
+        })
     }
 
     return(
