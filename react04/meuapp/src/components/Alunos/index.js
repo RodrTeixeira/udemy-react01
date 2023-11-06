@@ -1,9 +1,10 @@
+import Nome from "../Nome";
 
-
-function Alunos() {
+function Alunos({ nome }) {
     return (
       <div className="App">
-        <h2>Componente Alunos</h2>
+        <h2>Componente Alunos</h2><br/>
+        <Nome nome={nome}/>
       </div>
     );
   }
