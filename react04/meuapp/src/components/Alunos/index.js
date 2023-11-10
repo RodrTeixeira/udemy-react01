@@ -3,10 +3,10 @@ import Nome from "../Nome";
 import { UserContext } from "../../contexts/user";
 
 function Alunos() {
-    const { alunos } = useContext(UserContext)
+    const { qtdAlunos } = useContext(UserContext)
     return (
       <div className="App">
-        <h2>Componente Alunos</h2><br/>
+        <h2>Quantidade Total de Alunos:  {qtdAlunos}</h2><br/>
         <Nome/>
       </div>
     );
