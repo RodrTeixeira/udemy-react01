@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+
+import { AuthContext } from "../../contexts/auth";
 
 
 export default function SignUp(){
@@ -8,10 +10,12 @@ export default function SignUp(){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const { signUp } = useContext(AuthContext);
+
     function handleSubmit(e){
         e.preventDefault();
         if(name !== "" && email !== "" && password !== ""){
-            alert("Fazer Cadastro")
+            signUp(email, password, name)
         }
     }
 
