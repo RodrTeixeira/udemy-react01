@@ -20,7 +20,24 @@ function AuthProvider( {children } ){
         await createUserWithEmailAndPassword(auth, email, password)
         .then( async (value) => {
             let uid = value.user.uid
-            await setDoc(doc(db, "users", uid))
+            await setDoc(doc(db, "users", uid), {
+                nome: name,
+                avatarUrl: null,
+            })
+           .then(() => {
+            let data = {
+                uid: uid,
+                nome: name,
+                email: value.user.email,
+                avatarUrl: null,
+            };
+            setUser(data);
+            setLoadingAuth(false);
+           })
+        })
+        .catch((error) => {
+            console.log(error);
+            setLoadingAuth(false);
         })
     }
 
@@ -30,7 +47,8 @@ function AuthProvider( {children } ){
                 signed: !!user, //false
                 user,
                 signIn,
-                signUp
+                signUp,
+                loadingAuth
             }}
         >
             {children}
