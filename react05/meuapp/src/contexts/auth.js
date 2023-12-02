@@ -37,7 +37,11 @@ function AuthProvider( {children } ){
             navigate("/dashboard");
 
         })
-
+        .catch((error) => {
+            console.log(error);
+            setLoadingAuth(false);
+            toast.error("Ops˜! Algo deu errado!!");
+        })
 
     }
 
