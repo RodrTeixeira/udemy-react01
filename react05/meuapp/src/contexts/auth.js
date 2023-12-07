@@ -93,7 +93,7 @@ function AuthProvider( {children } ){
     }
 
     async function logout(){
-        await signOut();
+        await signOut(auth);
         localStorage.removeItem("@ticketsPRO");
         setUser(null);
     }
