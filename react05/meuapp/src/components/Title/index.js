@@ -1,9 +1,10 @@
 import "./title.css";
 
-export default function Title(){
+export default function Title( {children, name}){
     return(
         <div className="title">
-            <span>Meu Perfil</span>
+            {children}
+            <span>{name}</span>
         </div>
     )
 }
