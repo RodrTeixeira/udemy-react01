@@ -34,7 +34,15 @@ export default function Profile(){
                                 <img src={avatarUrl} alt="Foto de Perfil" width={250} height={250} />
                             )}
                         </label>
+                        <label>Nome</label>
+                        <input type="text" placeholder="Seu Nome" />
+                        <label>Email</label>
+                        <input type="text" placeholder="teste@teste.com" disabled={true} />
+                        <button type="submit">Salvar</button>
                     </form>
+                </div>
+                <div className="container">
+                    <button className="logout-btn">Sair</button>
                 </div>
             </div>
         </div>
