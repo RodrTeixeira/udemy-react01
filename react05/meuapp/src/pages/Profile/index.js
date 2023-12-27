@@ -9,6 +9,9 @@ import { AuthContext } from "../../contexts/auth";
 
 import "./profile.css";
 
+import { db, storage } from "../../services/firebaseConnection";
+import { doc, updateDoc } from "firebase/firestore";
+
 export default function Profile(){
     const { user, storageUser, setUser, logout } = useContext(AuthContext);
 
@@ -32,6 +35,19 @@ export default function Profile(){
 
     }
 
+    async function handleSubmit(e){
+        e.preventDefault();
+        if(imageAvatar === null & nome !== ""){
+            const docRef = doc(db, "users", user.uid)
+            await updateDoc(docRef,{
+                nome: nome,
+            })
+            .then(() => {
+                
+            })
+        }
+    }
+
     return(
         <div>
             <Header/>
@@ -40,7 +56,7 @@ export default function Profile(){
                     <FiSettings size={25}/>
                 </Title>
                 <div className="container">
-                    <form className="form-profile">
+                    <form className="form-profile" onSubmit={handleSubmit}>
                         <label className="label-avatar">
                             <span>
                                 <FiUpload color="#fff" size={25} />
