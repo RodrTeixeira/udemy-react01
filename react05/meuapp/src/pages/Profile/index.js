@@ -12,6 +12,9 @@ import "./profile.css";
 import { db, storage } from "../../services/firebaseConnection";
 import { doc, updateDoc } from "firebase/firestore";
 
+import { toast } from "react-toastify";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
 export default function Profile(){
     const { user, storageUser, setUser, logout } = useContext(AuthContext);
 
@@ -35,6 +38,15 @@ export default function Profile(){
 
     }
 
+    async function handleUpload(){
+        const currentUid = user.uid;
+        const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar.name}`)
+        const uploadTask = uploadBytes(uploadRef, imageAvatar)
+        .then(() => {
+            console.log("Enviado com suceesso!!!")
+        })
+    }
+
     async function handleSubmit(e){
         e.preventDefault();
         if(imageAvatar === null & nome !== ""){
@@ -43,8 +55,17 @@ export default function Profile(){
                 nome: nome,
             })
             .then(() => {
-                
+              let data = {
+                ...user,
+                nome: nome,
+              }  
+              setUser(data);
+              storageUser(data);
+              toast.success("Atualizado com sucesso!")
             })
+        }else if(nome !== "" && imageAvatar !== null){
+            // Atualizar tanto o nome quanto a foto
+            handleUpload()
         }
     }
 
