@@ -42,8 +42,26 @@ export default function Profile(){
         const currentUid = user.uid;
         const uploadRef = ref(storage, `images/${currentUid}/${imageAvatar.name}`)
         const uploadTask = uploadBytes(uploadRef, imageAvatar)
-        .then(() => {
-            console.log("Enviado com suceesso!!!")
+        .then((snapshot) => {
+            getDownloadURL(snapshot.ref).then(async (downLoadURL) => {
+                let urlFoto = downLoadURL;
+                const docRef = doc(db, "users", user.uid)
+                await updateDoc(docRef, {
+                    avatarUrl: urlFoto,
+                    nome: nome,
+
+                })
+                .then(() => {
+                    let data = {
+                        ...user,
+                        nome: nome,
+                        avatarUrl: urlFoto,
+                      }  
+                      setUser(data);
+                      storageUser(data);
+                      toast.success("Atualizado com sucesso!")
+                })
+            })
         })
     }
 
