@@ -11,6 +11,13 @@ export default function Customers(){
                 <Title name="Clientes">
                     <FiUser size={25}/>
                 </Title>
+
+                <div className="container">
+                    <form className="form-profile">
+                        <label>Nome Fantasia</label>
+                        <input/>
+                    </form>
+                </div>
             </div>
         </div>
     )
