@@ -22,6 +22,18 @@ export default function Customers(){
                 cnpj: cnpj,
                 endereco: endereco
             })
+            .then(() => {
+                setNome("")
+                setCnpj("")
+                setEndereco("")
+                toast.success("Empresa Registrada!")
+            })
+            .catch((error) => {
+                console.log(error);
+                toast.error("Erro ao fazer o cadastro!")
+            })
+        }else{
+            toast.error("Preencha todos os campos!")
         }
     }
     return(
