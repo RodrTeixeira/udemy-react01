@@ -24,14 +24,34 @@ export default function Dashboard(){
                     <FiMessageSquare size={25} />
                 </Title>
                 <>
-                    <Link>
+                    <Link to="/new" className="new">
                         <FiPlus color="#fff" size={25} />
+                        Novo Chamado
                     </Link>
-                    <div className="contaoiner">
-                        <h1>Teste</h1>
-                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Assunto</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Cadastrado em</th>
+                                <th scope="col">#</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-Label="Cliente">
+                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </>
             </div>
         </div>
     )
 }
+
+    //                <div className="container dashboard">
+    //                    <h1>Teste</h1>
+    //                </div>
