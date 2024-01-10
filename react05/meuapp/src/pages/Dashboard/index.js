@@ -4,10 +4,11 @@ import { AuthContext } from "../../contexts/auth";
 import Header from "../../components/Header";
 
 import Title from "../../components/Title";
-import { FiPlus, FiMessageSquare } from "react-icons/fi";
+import { FiPlus, FiMessageSquare, FiSearch, FiEdit2 } from "react-icons/fi";
 
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+//import { CloseButton } from "react-toastify/dist/components";
 
 export default function Dashboard(){
     const { logout } = useContext(AuthContext);
@@ -41,7 +42,24 @@ export default function Dashboard(){
                         <tbody>
                             <tr>
                                 <td data-Label="Cliente">
-                                
+                                    Mercado Esquina
+                                </td>
+                                <td data-Label="Assunto">
+                                    Suporte
+                                </td>
+                                <td data-Label="Status">
+                                    Em Aberto
+                                </td>
+                                <td data-Label="Cadastrado">
+                                    12/05/2022
+                                </td>
+                                <td data-Label="#">
+                                    <button className="action" style={{backgroundColor: "#3586f6"}}>
+                                        <FiSearch color="#fff" size={17} />
+                                    </button>
+                                    <button className="action"  style={{backgroundColor: "#f6a935"}}>
+                                        <FiEdit2 color="#fff" size={17} />
+                                    </button>
                                 </td>
                             </tr>
                         </tbody>
