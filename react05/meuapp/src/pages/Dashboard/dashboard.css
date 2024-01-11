@@ -28,5 +28,26 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+}
+
+table{
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+}
+
+table caption{
+    font-size: 1.5rem;
+    margin: 0.5em 0 0.75em;
+}
+
+table tr{
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
     
 }
