@@ -49,5 +49,36 @@ table caption{
 table tr{
     background-color: #f8f8f8;
     border: 1px solid #ddd;
+    padding: 0.35em;
+
+}
+
+table th, table td{
+    padding: 0.62em;
+    text-align: center;
+}
+
+table th{
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+table td .action{
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+table td .action svg{
+    vertical-align: middle;   
     
+}
+
+table td .badge{
+    padding: 3px;
+    border-radius: 3px;
+    color: #fff;
 }
