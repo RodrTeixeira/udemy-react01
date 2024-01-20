@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "../../components/Header";
 import Title from "../../components/Title";
 import { FiPlusCircle } from "react-icons/fi";
@@ -6,6 +7,12 @@ import "./new.css";
 
 
 export default function New(){
+    const [customers, setCustomers] = useState([]);
+
+    const [complemento, setComplemento] = useState("");
+    const [assunto, setAssunto] = useState("Suporte");
+    const [status, setStatus] = useState("Aberto");
+
     return(
         <diiv>
             <Header/>
