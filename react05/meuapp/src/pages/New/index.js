@@ -13,6 +13,10 @@ export default function New(){
     const [assunto, setAssunto] = useState("Suporte");
     const [status, setStatus] = useState("Aberto");
 
+    function handleOptionChange(e){
+        setStatus(e.target.value);
+    }
+
     return(
         <diiv>
             <Header/>
@@ -39,6 +43,8 @@ export default function New(){
                                 type="radio"
                                 name="radio"
                                 Value="Aberto"
+                                onChange={handleOptionChange}
+                                checked={status === "Aberto" }
                             />
                             <span>Em Aberto</span>
 
@@ -46,6 +52,8 @@ export default function New(){
                                 type="radio"
                                 name="radio"
                                 Value="Progresso"
+                                onChange={handleOptionChange}
+                                checked={status === "Progresso" }
                             />
                             <span>Progresso</span>
 
@@ -53,6 +61,8 @@ export default function New(){
                                 type="radio"
                                 name="radio"
                                 Value="Atendido"
+                                onChange={handleOptionChange}
+                                checked={status === "Atendido" }
                             />
                             <span>Atendido</span>
                         </div>
@@ -60,6 +70,8 @@ export default function New(){
                         <textarea
                             type="text"
                             placeholder="Descreva seu problema (opcional)"
+                            value={complemento}
+                            onChange={(e) => setComplemento(e.target.value) }
                         />
                         <button type="submit">Registrar</button>
                     </form>
