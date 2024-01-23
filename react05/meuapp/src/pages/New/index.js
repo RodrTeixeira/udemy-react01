@@ -8,6 +8,8 @@ import { collection, getDocs, getDoc, doc} from "firebase/firestore";
 
 import "./new.css";
 
+const listRef = collection(db, "customers")
+
 
 export default function New(){
     const { user } = useContext(AuthContext);
@@ -20,7 +22,25 @@ export default function New(){
     const [status, setStatus] = useState("Aberto");
 
     useEffect(() => {
-        
+        async function loadCustomer(){
+            const querySnapshot = await getDocs(listRef)
+            .then((snapshot) => {
+                let lista = [];
+                snapshot.forEach((doc) => {
+                    lista.push({
+                        id: doc.id,
+                        nomeFantasia: doc.data().nomeFantasia
+                    })
+                })
+                console.log(lista);
+            })
+            .catch((error) => {
+                console.log("Erro ao buscar os clientes", error);
+                setLoadCustomer(false);
+                setCustomers([{ id: "1", nomeFantasia: "FREELA"} ])
+            })
+        }
+        loadCustomer();
     }, [])
 
     function handleOptionChange(e){
