@@ -32,7 +32,12 @@ export default function New(){
                         nomeFantasia: doc.data().nomeFantasia
                     })
                 })
-                console.log(lista);
+                if(snapshot.docs.size === 0){
+                    console.log("NENHUMA EMPRESA ENCONTRADA!");
+                    setCustomers([{ id: "1", nomeFantasia: "FREELA"} ])
+                    setLoadCustomer(false);
+                    return;
+                }
             })
             .catch((error) => {
                 console.log("Erro ao buscar os clientes", error);
