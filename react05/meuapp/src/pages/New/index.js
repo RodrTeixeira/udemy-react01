@@ -16,6 +16,7 @@ export default function New(){
 
     const [customers, setCustomers] = useState([]);
     const [loadCustomer, setLoadCustomer] = useState(true);
+    const [customerSelected, setCustomerSelected] = useState(0);
 
     const [complemento, setComplemento] = useState("");
     const [assunto, setAssunto] = useState("Suporte");
@@ -38,6 +39,9 @@ export default function New(){
                     setLoadCustomer(false);
                     return;
                 }
+
+                setCustomers(lista);
+                setLoadCustomer(false);
             })
             .catch((error) => {
                 console.log("Erro ao buscar os clientes", error);
@@ -56,6 +60,10 @@ export default function New(){
         setAssunto(e.target.value)
     }
 
+    function handleChangeCustomer(e){
+        setCustomerSelected(e.target.value)
+    }
+
     return(
         <diiv>
             <Header/>
@@ -66,10 +74,23 @@ export default function New(){
                 <div className="container">
                     <form className="form-profile">
                         <label>Clientes</label>
-                        <select>
-                            <option key={1} value={1}>Mercado Teste</option>
-                            <option key={2} value={2}>Loja Informática</option>
-                        </select>
+                        {
+                            loadCustomer ? (
+                                <input type="text" disable="true" value="Carregando..." />
+                            ) : (
+                                <select value={customerSelected} onChange={handleChangeCustomer}>
+                                    {
+                                        customers.map((item, index) => {
+                                            return(
+                                                <option key={index} value={index}>
+                                                    {item.nomeFantasia}
+                                                </option>
+                                            )
+                                        })
+                                    }
+                                </select>
+                            )
+                        }
                         <label>Assunto</label>
                         <select value={assunto} onChange={handleChangeSelect}>
                             <option value="Suporte">Suporte</option>
