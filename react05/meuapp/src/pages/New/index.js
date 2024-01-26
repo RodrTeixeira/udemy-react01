@@ -62,6 +62,7 @@ export default function New(){
 
     function handleChangeCustomer(e){
         setCustomerSelected(e.target.value)
+        console.log(e.target.value);
     }
 
     return(
