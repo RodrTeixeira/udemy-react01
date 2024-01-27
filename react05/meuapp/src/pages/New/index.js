@@ -73,7 +73,7 @@ export default function New(){
                     <FiPlusCircle size={25} />
                 </Title>
                 <div className="container">
-                    <form className="form-profile">
+                    <form className="form-profile" onSubmit={handleRegister}>
                         <label>Clientes</label>
                         {
                             loadCustomer ? (
