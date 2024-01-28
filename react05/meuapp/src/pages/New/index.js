@@ -65,6 +65,10 @@ export default function New(){
         console.log(e.target.value);
     }
 
+    async function handleRegister(e){
+        e.preventDefault();
+    }
+
     return(
         <diiv>
             <Header/>
