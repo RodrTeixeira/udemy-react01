@@ -67,6 +67,8 @@ export default function New(){
 
     async function handleRegister(e){
         e.preventDefault();
+
+        alert("TESTE")
     }
 
     return(
