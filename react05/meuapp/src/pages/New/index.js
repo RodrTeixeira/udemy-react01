@@ -68,7 +68,17 @@ export default function New(){
     async function handleRegister(e){
         e.preventDefault();
 
-        alert("TESTE")
+        // Registrar um chamado
+
+        await addDoc(collection(db, "chamados"), {
+            created: new Date(),
+            cliente: customers[customerSelected].nomeFantasia,
+            clienteId: customers[customerSelected].id,
+            assunto: assunto,
+            complemento: complemento,
+            status: status,
+            userId: user.uid,
+        })
     }
 
     return(
