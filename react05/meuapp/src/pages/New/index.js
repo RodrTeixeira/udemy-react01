@@ -7,6 +7,7 @@ import { db } from "../../services/firebaseConnection";
 import { collection, getDocs, getDoc, doc} from "firebase/firestore";
 
 import "./new.css";
+import { toast }  from "react-toastify";
 
 const listRef = collection(db, "customers")
 
@@ -78,6 +79,9 @@ export default function New(){
             complemento: complemento,
             status: status,
             userId: user.uid,
+        })
+        .then(() => {
+
         })
     }
 
