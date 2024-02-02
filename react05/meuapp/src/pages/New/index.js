@@ -86,7 +86,7 @@ export default function New(){
             setCustomerSelected(0)
         })
         .catch((error) => {
-            toast.error("Erro ao Registrar !")
+            toast.error("Erro ao registrar, tente mais tarde !")
             console.log(error);
         })
     }

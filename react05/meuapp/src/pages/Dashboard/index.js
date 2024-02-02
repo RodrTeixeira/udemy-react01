@@ -65,31 +65,6 @@ export default function Dashboard(){
                                 </td>
                             </tr>
 
-
-                            <tr>
-                                <td data-Label="Cliente">
-                                    Informática TECH
-                                </td>
-                                <td data-Label="Assunto">
-                                    Suporte
-                                </td>
-                                <td data-Label="Status">
-                                    <span className="badge" style={{ backgroundColor: "#999" }}>
-                                        Em aberto
-                                    </span>
-                                </td>
-                                <td data-Label="Cadastrado">
-                                    12/05/2022
-                                </td>
-                                <td data-Label="#">
-                                    <button className="action" style={{backgroundColor: "#3586f6"}}>
-                                        <FiSearch color="#fff" size={17} />
-                                    </button>
-                                    <button className="action"  style={{backgroundColor: "#f6a935"}}>
-                                        <FiEdit2 color="#fff" size={17} />
-                                    </button>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                 </>
@@ -101,3 +76,27 @@ export default function Dashboard(){
     //                <div className="container dashboard">
     //                    <h1>Teste</h1>
     //                </div>
+    //                            <tr>
+    //                            <td data-Label="Cliente">
+    //                                Informática TECH
+    //                            </td>
+    //                            <td data-Label="Assunto">
+    //                                Suporte
+    //                            </td>
+    //                            <td data-Label="Status">
+    //                                <span className="badge" style={{ backgroundColor: "#999" }}>
+    //                                    Em aberto
+    //                                </span>
+    //                            </td>
+    //                            <td data-Label="Cadastrado">
+    //                                12/05/2022
+    //                            </td>
+    //                            <td data-Label="#">
+    //                                <button className="action" style={{backgroundColor: "#3586f6"}}>
+    //                                    <FiSearch color="#fff" size={17} />
+    //                                </button>
+    //                                <button className="action"  style={{backgroundColor: "#f6a935"}}>
+    //                                    <FiEdit2 color="#fff" size={17} />
+    //                                </button>
+    //                            </td>
+    //                        </tr>
