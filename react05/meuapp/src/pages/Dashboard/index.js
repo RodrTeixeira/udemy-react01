@@ -8,7 +8,12 @@ import { FiPlus, FiMessageSquare, FiSearch, FiEdit2 } from "react-icons/fi";
 
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+import { collection, getDocs, orderBy, limit, startAfter, query} from "firebase/firestore";
+import { db } from "../../services/firebaseConnection";
+
 //import { CloseButton } from "react-toastify/dist/components";
+
+const listRef = collection(db, "chamados")
 
 export default function Dashboard(){
     const { logout } = useContext(AuthContext);
@@ -16,9 +21,12 @@ export default function Dashboard(){
     const [chamados, setChamados] = useState([])
     const [loading, setLoading] = useState(true)
 
-    async function handleLogout(){
-        await logout();
-    }
+    useEffect(() => {
+        async function loadChamados(){
+            const q = query(listRef)
+        }
+        loadChamados();
+    },[])
 
     return(
         <div>
