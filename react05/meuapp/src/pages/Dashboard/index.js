@@ -23,7 +23,7 @@ export default function Dashboard(){
 
     useEffect(() => {
         async function loadChamados(){
-            const q = query(listRef)
+            const q = query(listRef,orderBy("created", "desc"), limit(5))
         }
         loadChamados();
     },[])
