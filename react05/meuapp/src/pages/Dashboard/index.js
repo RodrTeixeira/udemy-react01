@@ -24,6 +24,8 @@ export default function Dashboard(){
     useEffect(() => {
         async function loadChamados(){
             const q = query(listRef,orderBy("created", "desc"), limit(5))
+
+            const querySnapshot = await getDocs(q)
         }
         loadChamados();
     },[])
