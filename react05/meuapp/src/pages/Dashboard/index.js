@@ -26,9 +26,23 @@ export default function Dashboard(){
             const q = query(listRef,orderBy("created", "desc"), limit(5))
 
             const querySnapshot = await getDocs(q)
+            await updateState(querySnapshot)
+            setLoading(false);
         }
         loadChamados();
+
+        return () => { }
     },[])
+
+    async function updateState(querySnapshot){
+        const isCollectionEmpty = querySnapshot.size === 0;
+        if(isCollectionEmpty){
+            let lista = [];
+            querySnapshot.forEach((doc) => {
+
+            })
+        }
+    }
 
     return(
         <div>
