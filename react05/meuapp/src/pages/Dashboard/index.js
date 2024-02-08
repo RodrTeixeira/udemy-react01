@@ -20,10 +20,11 @@ export default function Dashboard(){
 
     const [chamados, setChamados] = useState([])
     const [loading, setLoading] = useState(true)
+    const [isEmpty, setIsEmpty] = useState(false)
 
     useEffect(() => {
         async function loadChamados(){
-            const q = query(listRef,orderBy("created", "desc"), limit(5))
+            const q = query(listRef,orderBy("created", "desc"), limit(5));
 
             const querySnapshot = await getDocs(q)
             await updateState(querySnapshot)
@@ -39,8 +40,19 @@ export default function Dashboard(){
         if(isCollectionEmpty){
             let lista = [];
             querySnapshot.forEach((doc) => {
-
+                lista.push({
+                    id: doc.id,
+                    assunto: doc.data().assunto,
+                    cliente: doc.data().cliente,
+                    clienteId: doc.data().clienteId,
+                    created: doc.data().created,
+                    status: doc.data().status,
+                    complemento: doc.data().complemento,
+                })
             })
+            setChamados(chamados => [...chamados, ...lista])
+        }else{
+            setIsEmpty(true);
         }
     }
 
