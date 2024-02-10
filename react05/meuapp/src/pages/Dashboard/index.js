@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 import { collection, getDocs, orderBy, limit, startAfter, query} from "firebase/firestore";
 import { db } from "../../services/firebaseConnection";
 
+import { format } from "date-fns";
+
 //import { CloseButton } from "react-toastify/dist/components";
 
 const listRef = collection(db, "chamados")
@@ -27,6 +29,7 @@ export default function Dashboard(){
             const q = query(listRef,orderBy("created", "desc"), limit(5));
 
             const querySnapshot = await getDocs(q)
+            setChamados([]);
             await updateState(querySnapshot)
             setLoading(false);
         }
@@ -46,6 +49,7 @@ export default function Dashboard(){
                     cliente: doc.data().cliente,
                     clienteId: doc.data().clienteId,
                     created: doc.data().created,
+                    createdFormat: format(doc.data().created.toDate(), "dd/MM/yyyy"),
                     status: doc.data().status,
                     complemento: doc.data().complemento,
                 })
@@ -93,18 +97,18 @@ export default function Dashboard(){
                                     return(
                                         <tr key={index}>
                                             <td data-Label="Cliente">
-                                                Mercado Esquina
+                                               {item.cliente}
                                             </td>
                                             <td data-Label="Assunto">
-                                                Suporte
+                                                {item.assunto}
                                             </td>
                                             <td data-Label="Status">
                                                 <span className="badge" style={{ backgroundColor: "#999" }}>
-                                                    Em aberto
+                                                    {item.status}
                                                 </span>
                                             </td>
                                             <td data-Label="Cadastrado">
-                                                12/05/2022
+                                                {item.createdFormat}
                                             </td>
                                             <td data-Label="#">
                                                 <button className="action" style={{backgroundColor: "#3586f6"}}>
