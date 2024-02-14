@@ -20,9 +20,9 @@ const listRef = collection(db, "chamados")
 export default function Dashboard(){
     const { logout } = useContext(AuthContext);
 
-    const [chamados, setChamados] = useState([])
-    const [loading, setLoading] = useState(true)
-    const [isEmpty, setIsEmpty] = useState(false)
+    const [chamados, setChamados] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [isEmpty, setIsEmpty] = useState(false);
 
     useEffect(() => {
         async function loadChamados(){
@@ -58,6 +58,22 @@ export default function Dashboard(){
         }else{
             setIsEmpty(true);
         }
+    }
+
+    if(loading){
+        return(
+            <div>
+                <Header/>
+                <div className="content">
+                    <Title name="Tickets">
+                        <FiMessageSquare size={25} />
+                    </Title>
+                    <div className="container dashboard">
+                        <span>Buscando Chamados...</span>
+                    </div>
+                </div>
+            </div>
+        )
     }
 
     return(
@@ -119,6 +135,7 @@ export default function Dashboard(){
                                                 </button>
                                             </td>
                                         </tr>
+                                        
                                     )
                                 })}
 
