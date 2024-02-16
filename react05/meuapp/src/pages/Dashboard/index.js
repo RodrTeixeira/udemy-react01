@@ -22,7 +22,9 @@ export default function Dashboard(){
 
     const [chamados, setChamados] = useState([]);
     const [loading, setLoading] = useState(true);
+
     const [isEmpty, setIsEmpty] = useState(false);
+    const [lastDocs, setLastDocs] = useState();
 
     useEffect(() => {
         async function loadChamados(){
