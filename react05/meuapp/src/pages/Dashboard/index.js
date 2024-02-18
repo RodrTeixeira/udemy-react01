@@ -57,6 +57,8 @@ export default function Dashboard(){
                     complemento: doc.data().complemento,
                 })
             })
+            const lastDoc = querySnapshot.docs[querySnapshot.docs.length - 1] // Pegando o ultimo item
+            console.log(lastDoc)
             setChamados(chamados => [...chamados, ...lista])
         }else{
             setIsEmpty(true);
