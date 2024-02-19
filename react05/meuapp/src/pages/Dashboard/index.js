@@ -58,11 +58,14 @@ export default function Dashboard(){
                 })
             })
             const lastDoc = querySnapshot.docs[querySnapshot.docs.length - 1] // Pegando o ultimo item
-            console.log(lastDoc)
+            
             setChamados(chamados => [...chamados, ...lista])
+            setLastDocs(lastDoc);
+
         }else{
             setIsEmpty(true);
         }
+        setLoadingMore(false);
     }
 
     if(loading){
