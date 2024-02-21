@@ -154,8 +154,8 @@ export default function Dashboard(){
                             </tbody>
                         </table>
 
-                        <h3>Buscando mais chamados...</h3>
-                        <button onClick={handleMore}>Buscar mais</button>
+                        {loadingMore && <h3>Buscando mais chamados...</h3>}
+                        {!loadingMore && !isEmpty && <button onClick={handleMore}>Buscar mais</button>}
                         </>
                     )}
                    
