@@ -155,7 +155,7 @@ export default function Dashboard(){
                         </table>
 
                         {loadingMore && <h3>Buscando mais chamados...</h3>}
-                        {!loadingMore && !isEmpty && <button onClick={handleMore}>Buscar mais</button>}
+                        {!loadingMore && !isEmpty && <button className="btn-more" onClick={handleMore}>Buscar mais</button>}
                         </>
                     )}
                    
