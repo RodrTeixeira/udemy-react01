@@ -68,8 +68,11 @@ export default function Dashboard(){
         setLoadingMore(false);
     }
 
-    function handleMore(){
-        alert("TESTE")
+    async function handleMore(){
+        setLoadingMore(true);
+        const q = query(listRef,orderBy("created", "desc"), startAfter(lastDocs), limit(5));
+        const querySnapshot = await getDocs(q);
+        await updateState(querySnapshot);
     }
 
     if(loading){
