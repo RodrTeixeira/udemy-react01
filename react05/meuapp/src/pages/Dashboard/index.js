@@ -42,7 +42,7 @@ export default function Dashboard(){
     },[])
 
     async function updateState(querySnapshot){
-        const isCollectionEmpty = querySnapshot.size === 0;
+        const isCollectionEmpty = querySnapshot.size !== 0;
         if(isCollectionEmpty){
             let lista = [];
             querySnapshot.forEach((doc) => {
@@ -134,7 +134,7 @@ export default function Dashboard(){
                                                 {item.assunto}
                                             </td>
                                             <td data-Label="Status">
-                                                <span className="badge" style={{ backgroundColor: "#999" }}>
+                                                <span className="badge" style={{ backgroundColor: item.status === "Aberto" ? "#5cb85c" : "#999" }}>
                                                     {item.status}
                                                 </span>
                                             </td>
@@ -142,7 +142,7 @@ export default function Dashboard(){
                                                 {item.createdFormat}
                                             </td>
                                             <td data-Label="#">
-                                                <button className="action" style={{backgroundColor: "#3586f6"}}>
+                                                <button className="action" style={{backgroundColor: "#3583f6"}}>
                                                     <FiSearch color="#fff" size={17} />
                                                 </button>
                                                 <button className="action"  style={{backgroundColor: "#f6a935"}}>
