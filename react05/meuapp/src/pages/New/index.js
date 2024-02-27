@@ -66,6 +66,8 @@ export default function New(){
         await getDoc(docRef)
         .then((snapshot) => {
             setAssunto(snapshot.data().assunto)
+            setStatus(snapshot.data().status)
+            setComplemento(snapshot.data().complemento)
         })
         .catch((error) => {
             console.log(error);
