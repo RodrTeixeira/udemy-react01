@@ -68,6 +68,9 @@ export default function New(){
             setAssunto(snapshot.data().assunto)
             setStatus(snapshot.data().status)
             setComplemento(snapshot.data().complemento)
+
+            let index = Lista.findIndex(item => item.id === snapshot.data().clienteId)
+            setCustomerSelected(index)
         })
         .catch((error) => {
             console.log(error);
