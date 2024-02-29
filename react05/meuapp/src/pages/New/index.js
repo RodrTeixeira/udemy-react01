@@ -96,6 +96,8 @@ export default function New(){
     async function handleRegister(e){
         e.preventDefault();
 
+        if (idCustomer){}
+
         // Registrar um chamado
 
         await addDoc(collection(db, "chamados"), {
