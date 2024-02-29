@@ -26,6 +26,7 @@ export default function New(){
     const [complemento, setComplemento] = useState("");
     const [assunto, setAssunto] = useState("Suporte");
     const [status, setStatus] = useState("Aberto");
+    const [idCustomer, setIdCustomer] = useState(false)
 
     useEffect(() => {
         async function loadCustomer(){
@@ -71,9 +72,11 @@ export default function New(){
 
             let index = Lista.findIndex(item => item.id === snapshot.data().clienteId)
             setCustomerSelected(index)
+            setIdCustomer(true);
         })
         .catch((error) => {
             console.log(error);
+            setIdCustomer(false);
         })
     }
 
