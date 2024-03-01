@@ -96,7 +96,10 @@ export default function New(){
     async function handleRegister(e){
         e.preventDefault();
 
-        if (idCustomer){}
+        if (idCustomer){
+            alert("Editando Chamado!");
+            return;
+        }
 
         // Registrar um chamado
 
