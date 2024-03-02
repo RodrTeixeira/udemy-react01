@@ -4,9 +4,9 @@ import Title from "../../components/Title";
 import { FiPlusCircle } from "react-icons/fi";
 import { AuthContext } from "../../contexts/auth";
 import { db } from "../../services/firebaseConnection";
-import { collection, getDocs, getDoc, doc, addDoc} from "firebase/firestore";
+import { collection, getDocs, getDoc, doc, addDoc, updateDoc} from "firebase/firestore";
 
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import "./new.css";
 import { toast }  from "react-toastify";
@@ -18,6 +18,7 @@ export default function New(){
     const { user } = useContext(AuthContext);
 
     const { id } = useParams();
+    const navigate = useNavigate();
 
     const [customers, setCustomers] = useState([]);
     const [loadCustomer, setLoadCustomer] = useState(true);
@@ -97,7 +98,21 @@ export default function New(){
         e.preventDefault();
 
         if (idCustomer){
-            alert("Editando Chamado!");
+            // Atualizando Chamados
+            const docRef = doc(db, "chamados", id)
+            await updateDoc(docRef, {
+                cliente: customers[customerSelected].nomeFantasia,
+                clienteId: customers[customerSelected].id,
+                assunto: assunto,
+                complemento: complemento,
+                status: status,
+                userId: user.uid,
+            })
+            .then(() => {
+                toast.info("Chamado atualizado com sucesso!")
+                setCustomerSelected(0)
+                setComplemento("")
+            })
             return;
         }
 
