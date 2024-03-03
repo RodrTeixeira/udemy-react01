@@ -112,7 +112,9 @@ export default function New(){
                 toast.info("Chamado atualizado com sucesso!")
                 setCustomerSelected(0)
                 setComplemento("")
+                navigate("/dashboard")
             })
+            .catch()
             return;
         }
 
