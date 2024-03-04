@@ -114,7 +114,10 @@ export default function New(){
                 setComplemento("")
                 navigate("/dashboard")
             })
-            .catch()
+            .catch((error) => {
+                toast.error("Ops, erro ao atualizar este chamado!!!")
+                console.log(error)
+            })
             return;
         }
 
