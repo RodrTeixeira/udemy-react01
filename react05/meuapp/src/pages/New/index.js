@@ -147,7 +147,7 @@ export default function New(){
         <diiv>
             <Header/>
             <div className="content">
-                <Title name="Novo Chamado">
+                <Title name={id ? "Editando Chamado" : "Novo Chamado"}>
                     <FiPlusCircle size={25} />
                 </Title>
                 <div className="container">
