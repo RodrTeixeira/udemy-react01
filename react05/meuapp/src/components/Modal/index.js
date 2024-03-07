@@ -3,7 +3,7 @@ import "./modal.css";
 export default function Modal(){
     return(
         <div>
-            <h1>Modal</h1>
+            <h1>MODAL</h1>
         </div>
     )
 }

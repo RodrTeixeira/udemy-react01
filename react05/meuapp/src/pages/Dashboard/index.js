@@ -12,6 +12,7 @@ import { collection, getDocs, orderBy, limit, startAfter, query} from "firebase/
 import { db } from "../../services/firebaseConnection";
 
 import { format } from "date-fns";
+import Modal from "../../components/Modal";
 
 //import { CloseButton } from "react-toastify/dist/components";
 
@@ -164,6 +165,7 @@ export default function Dashboard(){
                    
                 </>
             </div>
+            <Modal/>
         </div>
     )
 }
