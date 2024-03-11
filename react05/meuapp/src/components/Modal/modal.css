@@ -7,3 +7,19 @@
     background-color: rgba(0,0,0, 0.6);
     z-index: 99;
 }
+
+.modal .container{
+    position: fixed;
+    max-width: 600px;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding: 4em 2em;
+    background-color: #fff;
+    box-shadow: 0 0  20px rgba(0,0,0, 0.8);
+}
+
+.close{
+    
+}
