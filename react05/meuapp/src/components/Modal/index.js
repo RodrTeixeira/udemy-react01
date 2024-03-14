@@ -16,6 +16,19 @@ export default function Modal(){
                             Cliente: <i>Mercado</i>
                         </span>
                     </div>
+                    <div className="row">
+                        <span>
+                            Assunto: <i>Suporte</i>
+                        </span>
+                        <span>
+                            Cadastrado em: <i>22/08/2022</i>
+                        </span>
+                    </div>
+                    <div className="row">
+                        <span>
+                            
+                        </span>
+                    </div>
                 </main>
             </div>
         </div>
