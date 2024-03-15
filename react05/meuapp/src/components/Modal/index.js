@@ -26,9 +26,15 @@ export default function Modal(){
                     </div>
                     <div className="row">
                         <span>
-                            
+                            Status: <i>Aberto</i>
                         </span>
                     </div>
+                    <>
+                        <h3>Complemento</h3>
+                        <p>
+                            Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado
+                        </p>
+                    </>
                 </main>
             </div>
         </div>
