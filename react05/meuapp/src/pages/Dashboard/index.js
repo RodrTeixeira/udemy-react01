@@ -28,6 +28,9 @@ export default function Dashboard(){
     const [lastDocs, setLastDocs] = useState();
     const [loadingMore, setLoadingMore] = useState(false); 
 
+    const [showPostModal, setShowPostModal] = useState(false);
+    const [detail, setDetail] = useState();
+
     useEffect(() => {
         async function loadChamados(){
             const q = query(listRef,orderBy("created", "desc"), limit(5));
@@ -165,7 +168,9 @@ export default function Dashboard(){
                    
                 </>
             </div>
-            <Modal/>
+            {showPostModal && (
+                <Modal/>
+            )}
         </div>
     )
 }
