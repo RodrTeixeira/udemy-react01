@@ -79,6 +79,10 @@ export default function Dashboard(){
         await updateState(querySnapshot);
     }
 
+    function toggleModal(item){
+        console.log(item);
+    }
+
     if(loading){
         return(
             <div>
@@ -146,7 +150,7 @@ export default function Dashboard(){
                                                 {item.createdFormat}
                                             </td>
                                             <td data-Label="#">
-                                                <button className="action" style={{backgroundColor: "#3583f6"}}>
+                                                <button className="action" style={{backgroundColor: "#3583f6"}} onClick={() => toggleModal(item)}>
                                                     <FiSearch color="#fff" size={17} />
                                                 </button>
                                                 <Link to={`/new/${item.id}`} className="action"  style={{backgroundColor: "#f6a935"}}>
