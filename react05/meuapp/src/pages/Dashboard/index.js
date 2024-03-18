@@ -80,7 +80,8 @@ export default function Dashboard(){
     }
 
     function toggleModal(item){
-        console.log(item);
+        setShowPostModal(!showPostModal)
+        setDetail(item)
     }
 
     if(loading){
@@ -173,7 +174,10 @@ export default function Dashboard(){
                 </>
             </div>
             {showPostModal && (
-                <Modal/>
+                <Modal
+                    conteudo={detail}
+                    close={() => setShowPostModal(!showPostModal)}
+                />
             )}
         </div>
     )

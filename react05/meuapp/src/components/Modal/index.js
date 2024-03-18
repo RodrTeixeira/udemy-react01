@@ -1,11 +1,11 @@
 import "./modal.css";
 import { FiX } from "react-icons/fi";
 
-export default function Modal(){
+export default function Modal({conteudo, close}){
     return(
         <div className="modal">
             <div className="container">
-                <button className="close">
+                <button className="close" onClick={close}>
                     <FiX size={25} color="#fff" />
                     Voltar
                 </button>
