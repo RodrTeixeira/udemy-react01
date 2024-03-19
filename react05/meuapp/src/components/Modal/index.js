@@ -13,28 +13,30 @@ export default function Modal({conteudo, close}){
                     <h2>Detalhes do Chamado</h2>
                     <div className="row">
                         <span>
-                            Cliente: <i>Mercado</i>
+                            Cliente: <i>{conteudo.cliente}</i>
                         </span>
                     </div>
                     <div className="row">
                         <span>
-                            Assunto: <i>Suporte</i>
+                            Assunto: <i>{conteudo.assunto}</i>
                         </span>
                         <span>
-                            Cadastrado em: <i>22/08/2022</i>
+                            Cadastrado em: <i>{conteudo.createdFormat}</i>
                         </span>
                     </div>
                     <div className="row">
                         <span>
-                            Status: <i>Aberto</i>
+                            Status: <i>{conteudo.status}</i>
                         </span>
                     </div>
-                    <>
+                    {conteudo.complemento !== '' && (
+                        <>
                         <h3>Complemento</h3>
                         <p>
-                            Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado Aqui vai todo complemento do chamado
+                             {conteudo.complemento}
                         </p>
-                    </>
+                        </>
+                    )}
                 </main>
             </div>
         </div>
