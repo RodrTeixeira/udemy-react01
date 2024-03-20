@@ -26,7 +26,8 @@ export default function Modal({conteudo, close}){
                     </div>
                     <div className="row">
                         <span>
-                            Status: <i>{conteudo.status}</i>
+                            Status: <i className="status-badge" style={{color: "#fff", backgroundColor: conteudo.status === "Aberto" ? "#5cb85c" :  "#999" }}>
+                                {conteudo.status}</i>
                         </span>
                     </div>
                     {conteudo.complemento !== '' && (
