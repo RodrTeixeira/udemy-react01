@@ -3,6 +3,7 @@ import "./header.css";
 let renderCount = 0;
 
 export function Header() {
+
   renderCount++;
   
   return (
