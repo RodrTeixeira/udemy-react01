@@ -4,25 +4,15 @@ import { Header } from './Header';
 
 
 function App() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [username, setUsername] = useState("")
-  const [description, setDescription] = useState("")
-  const [type, setType] = useState("user")
-
-  //***************************
-
+  
   const nameRef = useRef(null);
+  const emailRef = userRef(null);
 
   function handleSave(e){
     e.preventDefault();
 
     console.log({
-      name,
-      email,
-      username,
-      description,
-      type,
+      name: nameRef.current?.value,
     })
   }
 
