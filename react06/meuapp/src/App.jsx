@@ -6,7 +6,10 @@ import { Header } from './Header';
 function App() {
   
   const nameRef = useRef(null);
-  const emailRef = userRef(null);
+  const emailRef = useRef(null);
+  const usernameRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const typeRef = useRef("user");
 
   function handleSave(e){
     e.preventDefault();
