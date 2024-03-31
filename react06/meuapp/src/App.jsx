@@ -35,33 +35,29 @@ function App() {
 
         <input
           type="text"
-          value={email}
-          onChange={ (event) => setEmail(event.target.value) }
           placeholder="Digite seu email..."
           className="input"
+          ref={emailRef}
         />
 
         <input
           type="text"
-          value={username}
-          onChange={ (event) => setUsername(event.target.value) }
           placeholder="Digite seu username..."
           className="input"
+          ref={usernameRef}
         />
 
         <textarea
           type="text"
-          value={description}
-          onChange={ (event) => setDescription(event.target.value) }
           placeholder="Digite sua descriçao..."
           className="input"
+          ref={descriptionRef}
         ></textarea>
 
 
         <select  
           className="select"
-          value={type}
-          onChange={e => setType(e.target.value)}
+          ref={typeRef}
         >
           <option value="user">user</option>
           <option value="admin">admin</option>
