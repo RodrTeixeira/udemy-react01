@@ -16,6 +16,10 @@ function App() {
 
     console.log({
       name: nameRef.current?.value,
+      email: emailRef.current?.value,
+      username: usernameRef.current?.value,
+      description: descriptionRef.current?.value,
+      type: typeRef.current?.value,
     })
   }
 
