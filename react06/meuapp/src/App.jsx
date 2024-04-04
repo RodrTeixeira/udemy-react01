@@ -19,7 +19,6 @@ function App() {
       email: emailRef.current?.value,
       username: usernameRef.current?.value,
       description: descriptionRef.current?.value,
-      type: typeRef.current?.value,
     })
   }
 
@@ -57,16 +56,6 @@ function App() {
           className="input"
           ref={descriptionRef}
         ></textarea>
-
-
-        <select  
-          className="select"
-          ref={typeRef}
-        >
-          <option value="user">user</option>
-          <option value="admin">admin</option>
-        </select>
-
 
         <button className="button" type="submit">Enviar</button>
       </form>
