@@ -9,7 +9,6 @@ function App() {
   const emailRef = useRef(null);
   const usernameRef = useRef(null);
   const descriptionRef = useRef(null);
-  const typeRef = useRef("user");
 
   function handleSave(e){
     e.preventDefault();
