@@ -10,6 +10,8 @@ function App() {
   const usernameRef = useRef(null);
   const descriptionRef = useRef(null);
 
+  const [input, setInput] = useState("");
+
   function handleSave(e){
     e.preventDefault();
 
@@ -28,13 +30,22 @@ function App() {
       <Header/>
 
       <form className="form" onSubmit={handleSave}>
+        
+        <input
+          type="text"
+          placeholder="Teste Renderização..."
+          className="input"
+          value={input}
+          onChange={ (event) => setInput(event.target.value) }
+        />
+        
         <input
           type="text"
           placeholder="Digite seu nome..."
           className="input"
           ref={nameRef}
         />
-
+    
         <input
           type="text"
           placeholder="Digite seu email..."
