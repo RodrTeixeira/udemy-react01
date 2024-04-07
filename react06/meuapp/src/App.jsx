@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useRef } from 'react'
 import './App.css'
 import { Header } from './Header';
 
@@ -9,8 +9,6 @@ function App() {
   const emailRef = useRef(null);
   const usernameRef = useRef(null);
   const descriptionRef = useRef(null);
-
-  const [input, setInput] = useState("");
 
   function handleSave(e){
     e.preventDefault();
@@ -30,14 +28,6 @@ function App() {
       <Header/>
 
       <form className="form" onSubmit={handleSave}>
-        
-        <input
-          type="text"
-          placeholder="Teste Renderização..."
-          className="input"
-          value={input}
-          onChange={ (event) => setInput(event.target.value) }
-        />
         
         <input
           type="text"
