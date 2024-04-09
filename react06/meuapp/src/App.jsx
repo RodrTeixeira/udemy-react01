@@ -8,7 +8,6 @@ function App() {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const usernameRef = useRef(null);
-  const descriptionRef = useRef(null);
 
   function handleSave(e){
     e.preventDefault();
@@ -17,7 +16,6 @@ function App() {
       name: nameRef.current?.value,
       email: emailRef.current?.value,
       username: usernameRef.current?.value,
-      description: descriptionRef.current?.value,
     })
   }
 
@@ -49,13 +47,6 @@ function App() {
           className="input"
           ref={usernameRef}
         />
-
-        <textarea
-          type="text"
-          placeholder="Digite sua descriçao..."
-          className="input"
-          ref={descriptionRef}
-        ></textarea>
 
         <button className="button" type="submit">Enviar</button>
       </form>
