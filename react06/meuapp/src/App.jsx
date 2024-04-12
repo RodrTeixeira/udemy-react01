@@ -24,7 +24,7 @@ function App() {
           type="text"
           placeholder="Digite seu nome..."
           className="input"
-          {...register("name")}
+          {...register("name", { required: true })}
           id="name"
         />
     
@@ -32,7 +32,7 @@ function App() {
           type="text"
           placeholder="Digite seu email..."
           className="input"
-          {...register("email")}
+          {...register("email", { required: true })}
           id="email"
         />
 
@@ -40,7 +40,7 @@ function App() {
           type="text"
           placeholder="Digite seu username..."
           className="input"
-          {...register("username")}
+          {...register("username", { required: true })}
           id="username"
         />
 
