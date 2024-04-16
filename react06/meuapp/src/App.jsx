@@ -1,8 +1,18 @@
-import { useRef } from 'react'
 import './App.css'
 import { Header } from './Header';
 
 import { useForm } from "react-hook-form";
+
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  name: z.string().noempty("O campo nome é obrigatório !"),
+  email: z.string().email("Digite um email válido.").noempty("O campo email é obrigatório !"),
+  username: z.string().min(3, "O username deve ter pelo menos 3 caracteres !")
+  .max(10, "O username pode ter no máximo 10 caracteres !")
+  .noempty("O campo username é obrigatório !")
+})
 
 function App() {
 
