@@ -3,8 +3,8 @@ import { Header } from './Header';
 
 import { useForm } from "react-hook-form";
 
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 
 const schema = z.object({
   name: z.string().noempty("O campo nome é obrigatório !"),
@@ -16,7 +16,9 @@ const schema = z.object({
 
 function App() {
 
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm({
+    resolver: zodResolver(schema)
+  })
 
   function handleSave(data){
     console.log(data);
