@@ -16,7 +16,7 @@ const schema = z.object({
 
 function App() {
 
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: zodResolver(schema)
   })
 
@@ -39,7 +39,7 @@ function App() {
           {...register("name")}
           id="name"
         />
-    
+        { errors.name && <p>{errors.name.message}</p>}
         <input
           type="text"
           placeholder="Digite seu email..."
