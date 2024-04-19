@@ -7,11 +7,11 @@ import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
 const schema = z.object({
-  name: z.string().noempty("O campo nome é obrigatório !"),
-  email: z.string().email("Digite um email válido.").noempty("O campo email é obrigatório !"),
+  name: z.string().nonempty("O campo nome é obrigatório !"),
+  email: z.string().email("Digite um email válido.").nonempty("O campo email é obrigatório !"),
   username: z.string().min(3, "O username deve ter pelo menos 3 caracteres !")
   .max(10, "O username pode ter no máximo 10 caracteres !")
-  .noempty("O campo username é obrigatório !")
+  .nonempty("O campo username é obrigatório !")
 })
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           {...register("name")}
           id="name"
         />
-        { errors.name && <p>{errors.name.message}</p>}
+        { errors.name && <p className='error'>{errors.name.message}</p>}
         <input
           type="text"
           placeholder="Digite seu email..."
