@@ -47,6 +47,7 @@ function App() {
           {...register("email")}
           id="email"
         />
+        { errors.email && <p className='error'>{errors.email.message}</p>}
 
         <input
           type="text"
@@ -55,6 +56,7 @@ function App() {
           {...register("username")}
           id="username"
         />
+        { errors.username && <p className='error'>{errors.username.message}</p>}
 
         <button className="button" type="submit">Enviar</button>
       </form>
