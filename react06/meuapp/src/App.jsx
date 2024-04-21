@@ -58,6 +58,15 @@ function App() {
         />
         { errors.username && <p className='error'>{errors.username.message}</p>}
 
+        <input
+          type="text"
+          placeholder="Digite seu username..."
+          className="input"
+          {...register("username")}
+          id="username"
+        />
+        { errors.username && <p className='error'>{errors.username.message}</p>}
+
         <button className="button" type="submit">Enviar</button>
       </form>
     </div>
