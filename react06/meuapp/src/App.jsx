@@ -11,7 +11,8 @@ const schema = z.object({
   email: z.string().email("Digite um email válido.").nonempty("O campo email é obrigatório !"),
   username: z.string().min(3, "O username deve ter pelo menos 3 caracteres !")
   .max(10, "O username pode ter no máximo 10 caracteres !")
-  .nonempty("O campo username é obrigatório !")
+  .nonempty("O campo username é obrigatório !"),
+  telefone: z.string().nonempty("Telefone é um campo válido")
 })
 
 function App() {
@@ -60,12 +61,12 @@ function App() {
 
         <input
           type="text"
-          placeholder="Digite seu username..."
+          placeholder="Digite seu telefone..."
           className="input"
-          {...register("username")}
-          id="username"
+          {...register("telefone")}
+          id="telefone"
         />
-        { errors.username && <p className='error'>{errors.username.message}</p>}
+        { errors.telefone && <p className='error'>{errors.telefone.message}</p>}
 
         <button className="button" type="submit">Enviar</button>
       </form>
