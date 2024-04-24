@@ -12,7 +12,7 @@ const schema = z.object({
   username: z.string().min(3, "O username deve ter pelo menos 3 caracteres !")
   .max(10, "O username pode ter no máximo 10 caracteres !")
   .nonempty("O campo username é obrigatório !"),
-  telefone: z.string().refine((value) => /ˆ\d{2} ?\d{9}$/.test(value), {
+  telefone: z.string().refine((value) => /\d{2} ?\d{9}$/.test(value), {
     message: "Digite um telefone válido no formato DD + 9 números"
   })
 })
