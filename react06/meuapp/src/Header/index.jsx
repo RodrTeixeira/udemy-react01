@@ -1,13 +1,9 @@
 import "./header.css";
 
-let renderCount = 0;
-
-export function Header() {
-
-  renderCount++;
+export function Header({name}) {
   
   return (
-   <h3 className="header">renderizou {renderCount}</h3>
+   <h3 className="header">Bem-vindo {name}</h3>
   )
 }
 
