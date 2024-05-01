@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import "./header.css";
 
 export function Header({name}) {
@@ -9,3 +11,4 @@ export function Header({name}) {
   )
 }
 
+export const memorizedHeader = memo(Header)
