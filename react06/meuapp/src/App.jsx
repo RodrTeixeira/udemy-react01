@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import './App.css'
-import { Header } from './Header';
+import { MemorizedHeader } from './Header';
 
 function App() {
 
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header name={name} />
+      <MemorizedHeader name={name} />
 
     <p>Nome:</p>
     <input

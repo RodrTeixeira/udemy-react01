@@ -11,4 +11,4 @@ export function Header({name}) {
   )
 }
 
-export const memorizedHeader = memo(Header)
+export const MemorizedHeader = memo(Header)
