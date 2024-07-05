@@ -1,17 +1,17 @@
 import React from "react";
 
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import Main from "./pages/Main";
 import Repositorio from "./pages/Repositorio";
 
-export default function Routes1(){
+export default function Routes(){
     return(
         <BrowserRouter>
-           <Routes>
-                <Route path="/" element={Main}/>
-                <Route path="/repositorio/:repositorio" element={Repositorio}/>
-            </Routes>        
+           <Switch>
+                <Route exact path="/" component={Main}/>
+                <Route exact path="/repositorio/:repositorio" component={Repositorio}/>
+            </Switch>        
         </BrowserRouter>
     );
 
