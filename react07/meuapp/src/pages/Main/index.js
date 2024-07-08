@@ -4,6 +4,9 @@ import {Title} from "./styles";
 
 export default function Main(){
     return(
-        <Title>Principal</Title>
+        <Title>
+            Principal
+            <span>Olá mundo!</span>
+        </Title>
     )
 }
