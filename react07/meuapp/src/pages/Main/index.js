@@ -6,7 +6,6 @@ export default function Main(){
     return(
         <Title>
             Principal
-            <span>Olá mundo!</span>
         </Title>
     )
 }
