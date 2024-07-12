@@ -21,5 +21,10 @@ body{
 body, input, button{
     color: #222;
     font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button{
+    cursor: pointer;
 }
 `;
