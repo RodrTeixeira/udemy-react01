@@ -8,6 +8,15 @@ export const Container = styled.div`
    padding: 30px;
    margin: 80px auto;
 
+   h1{
+    font-size: 20px;
+    display: flex;
+    align-itens: center;
+    flex-direction: row;
+    svg{
+        margin-right: 10px;
+    }
+   }
 
 `;
 
