@@ -21,7 +21,9 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.form`
-   
+   margin-top: 30px;
+   display: flex;
+   flex-direction: row;
 `;
 
 export const SubmitButton = styled.button`
