@@ -24,6 +24,10 @@ export const Form = styled.form`
    margin-top: 30px;
    display: flex;
    flex-direction: row;
+
+   input{
+    flex:1;
+   }
 `;
 
 export const SubmitButton = styled.button`
