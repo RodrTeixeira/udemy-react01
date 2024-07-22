@@ -27,6 +27,8 @@ export const Form = styled.form`
 
    input{
     flex:1;
+    border: 1px solid #DDD;
+    padding: 10px 15px;
    }
 `;
 
