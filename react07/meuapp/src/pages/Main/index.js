@@ -7,6 +7,10 @@ export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
 
+    function handleinputChange(e){
+        setNewRepo(e.target.value);
+    }
+
     return(
         <Container>
             <h1>
@@ -18,6 +22,7 @@ export default function Main(){
                 type="text" 
                 placeholder="Adicionar Repositórios"
                 value={newRepo}
+                onChange={handleinputChange}
                 />
                 <SubmitButton>
                     <FaPlus color="#FFF" size={14}/>
