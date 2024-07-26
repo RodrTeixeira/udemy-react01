@@ -7,6 +7,10 @@ export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
 
+    function handleSubmit(){
+        
+    }
+
     function handleinputChange(e){
         setNewRepo(e.target.value);
     }
@@ -17,7 +21,7 @@ export default function Main(){
                 <FaGithub size={25}/>
                 Meus Repositorios
             </h1>
-            <Form onSubmit={() => {}}>
+            <Form onSubmit={handleSubmit}>
                 <input 
                 type="text" 
                 placeholder="Adicionar Repositórios"
