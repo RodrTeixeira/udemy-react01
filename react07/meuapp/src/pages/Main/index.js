@@ -7,8 +7,9 @@ export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
 
-    function handleSubmit(){
-        
+    function handleSubmit(e){
+        e.preventDefault();
+        console.log(newRepo);
     }
 
     function handleinputChange(e){
