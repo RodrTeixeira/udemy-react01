@@ -3,6 +3,8 @@ import {FaGithub, FaPlus} from "react-icons/fa";
 
 import {Container, Form, SubmitButton} from "./styles";
 
+import api from "../../services/api";
+
 export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
