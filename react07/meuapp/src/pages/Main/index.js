@@ -11,7 +11,8 @@ export default function Main(){
 
     function handleSubmit(e){
         e.preventDefault();
-        console.log(newRepo);
+       
+        const response = api.get
     }
 
     function handleinputChange(e){
