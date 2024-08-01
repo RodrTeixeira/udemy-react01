@@ -9,10 +9,12 @@ export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault();
        
-        const response = api.get
+        const response = await api.get(`repos/${newRepo}`)
+
+        console.log(response.data);
     }
 
     function handleinputChange(e){
