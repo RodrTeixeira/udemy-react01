@@ -8,13 +8,16 @@ import api from "../../services/api";
 export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
+    const [repositorios, setRepositorios] = useState([]);
 
     async function handleSubmit(e){
         e.preventDefault();
        
         const response = await api.get(`repos/${newRepo}`)
 
-        console.log(response.data);
+        const data = {
+            name: response.data.full_name,
+        }
     }
 
     function handleinputChange(e){
