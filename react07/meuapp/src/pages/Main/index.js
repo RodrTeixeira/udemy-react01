@@ -18,6 +18,9 @@ export default function Main(){
         const data = {
             name: response.data.full_name,
         }
+
+        setRepositorios([...repositorios, data]);
+        setNewRepo('');
     }
 
     function handleinputChange(e){
