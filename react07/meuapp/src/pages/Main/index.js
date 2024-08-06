@@ -10,7 +10,7 @@ export default function Main(){
     const [newRepo, setNewRepo] = useState('');
     const [repositorios, setRepositorios] = useState([]);
 
-    const handleSubmit = useCallback(()=>{},[]){
+    const handleSubmit = useCallback((e)=>{
         e.preventDefault();
        
         const response = await api.get(`repos/${newRepo}`)
@@ -21,7 +21,8 @@ export default function Main(){
 
         setRepositorios([...repositorios, data]);
         setNewRepo('');
-    }
+    },[])
+       
 
     function handleinputChange(e){
         setNewRepo(e.target.value);
