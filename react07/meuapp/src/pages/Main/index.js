@@ -11,16 +11,7 @@ export default function Main(){
     const [repositorios, setRepositorios] = useState([]);
 
     const handleSubmit = useCallback((e)=>{
-        e.preventDefault();
-       
-        const response = await api.get(`repos/${newRepo}`)
-
-        const data = {
-            name: response.data.full_name,
-        }
-
-        setRepositorios([...repositorios, data]);
-        setNewRepo('');
+        
     },[])
        
 
