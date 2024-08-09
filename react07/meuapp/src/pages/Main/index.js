@@ -12,7 +12,12 @@ export default function Main(){
 
     const handleSubmit = useCallback((e)=>{
         async function submit(){
-            
+           const response = await api.get(`repos/$(newRepo)`) 
+           const data = {
+            name: response.data.full_name,
+           }
+           setRepositorios([...repositorios,data]);
+           newRepo('');
         }
     },[])
        
