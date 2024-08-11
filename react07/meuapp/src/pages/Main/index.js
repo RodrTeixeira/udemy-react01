@@ -9,6 +9,7 @@ export default function Main(){
 
     const [newRepo, setNewRepo] = useState('');
     const [repositorios, setRepositorios] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = useCallback((e)=>{
 
