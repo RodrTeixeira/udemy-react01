@@ -16,6 +16,11 @@ export default function Main(){
         e.preventDefault();
 
         async function submit(){
+
+            try{
+
+            }
+            
            const response = await api.get(`repos/${newRepo}`);
 
            const data = {
