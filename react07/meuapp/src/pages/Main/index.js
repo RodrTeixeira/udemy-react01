@@ -18,16 +18,15 @@ export default function Main(){
         async function submit(){
 
             try{
+                const response = await api.get(`repos/${newRepo}`);
 
+                const data = {
+                 name: response.data.full_name,
+                }
+                setRepositorios([...repositorios,data]);
+                setNewRepo('');
             }
-            
-           const response = await api.get(`repos/${newRepo}`);
 
-           const data = {
-            name: response.data.full_name,
-           }
-           setRepositorios([...repositorios,data]);
-           setNewRepo('');
         }
         submit();
     },[newRepo,repositorios])
