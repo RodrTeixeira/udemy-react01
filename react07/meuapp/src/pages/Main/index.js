@@ -26,7 +26,7 @@ export default function Main(){
                 setRepositorios([...repositorios,data]);
                 setNewRepo('');
             }catch(error){
-                
+               console.log(error);
             }
 
         }
