@@ -27,7 +27,10 @@ export default function Main(){
                 setNewRepo('');
             }catch(error){
                console.log(error);
+            }finally{
+                
             }
+
 
         }
         submit();
