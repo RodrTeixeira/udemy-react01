@@ -17,6 +17,8 @@ export default function Main(){
 
         async function submit(){
 
+            setLoading(true);
+
             try{
                 const response = await api.get(`repos/${newRepo}`);
 
