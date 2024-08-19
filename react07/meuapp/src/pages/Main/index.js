@@ -30,7 +30,7 @@ export default function Main(){
             }catch(error){
                console.log(error);
             }finally{
-                
+               setLoading(false);  
             }
 
 
