@@ -56,7 +56,7 @@ export default function Main(){
                 value={newRepo}
                 onChange={handleinputChange}
                 />
-                <SubmitButton>
+                <SubmitButton loading={loading ? 1 : 0}>
                     <FaPlus color="#FFF" size={14}/>
                 </SubmitButton>
             </Form>
