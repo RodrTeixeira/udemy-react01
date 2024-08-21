@@ -34,9 +34,10 @@ export const Form = styled.form`
    }
 `;
 
-export const SubmitButton = styled.button.attrs({
-   type: `submit`
-})`
+export const SubmitButton = styled.button.attrs(props => ({
+   type: `submit`,
+   
+}))`
    background: #0D2636;
    border: 0;
    border-radius: 4px;
