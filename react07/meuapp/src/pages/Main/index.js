@@ -57,6 +57,11 @@ export default function Main(){
                 onChange={handleinputChange}
                 />
                 <SubmitButton loading={loading ? 1 : 0}>
+                    {loading ? (
+                        <FaSpinner color="#FFF" size={14}/>
+                    )
+
+                    }
                     <FaPlus color="#FFF" size={14}/>
                 </SubmitButton>
             </Form>
