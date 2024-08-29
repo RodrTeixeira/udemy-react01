@@ -37,7 +37,9 @@ export const Form = styled.form`
 // Criando animação do botão
 
 const animate = keyframes`
-
+   from{
+      transform: rotate(0deg);
+   }
 `;
 
 export const SubmitButton = styled.button.attrs(props => ({
