@@ -40,6 +40,9 @@ const animate = keyframes`
    from{
       transform: rotate(0deg);
    }
+   to{
+      transform: rotate(360);
+   }
 `;
 
 export const SubmitButton = styled.button.attrs(props => ({
