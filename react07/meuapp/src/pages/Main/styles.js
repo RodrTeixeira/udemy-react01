@@ -41,7 +41,7 @@ const animate = keyframes`
       transform: rotate(0deg);
    }
    to{
-      transform: rotate(360);
+      transform: rotate(360deg);
    }
 `;
 
