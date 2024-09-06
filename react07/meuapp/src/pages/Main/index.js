@@ -66,7 +66,7 @@ export default function Main(){
                 </SubmitButton>
             </Form>
             <list>
-
+                {repositorios.map()}
             </list>
         </Container>
     )
