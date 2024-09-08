@@ -66,9 +66,11 @@ export default function Main(){
                 </SubmitButton>
             </Form>
             <list>
-                {repositorios.map(repo => {
-                    
-                })}
+                {repositorios.map(repo => (
+                    <li>
+                        
+                    </li>
+                ))}
             </list>
         </Container>
     )
