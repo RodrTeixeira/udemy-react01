@@ -68,7 +68,7 @@ export default function Main(){
             <list>
                 {repositorios.map(repo => (
                     <li>
-                        <span></span>
+                        <span>{repo.name}</span>
                     </li>
                 ))}
             </list>
