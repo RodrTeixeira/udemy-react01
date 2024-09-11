@@ -67,7 +67,7 @@ export default function Main(){
             </Form>
             <list>
                 {repositorios.map(repo => (
-                    <li>
+                    <li key={repo.name}>
                         <span>{repo.name}</span>
                     </li>
                 ))}
