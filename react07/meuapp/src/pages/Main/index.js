@@ -70,7 +70,7 @@ export default function Main(){
                     <li key={repo.name}>
                         <span>{repo.name}</span>
                         <a href="">
-
+                            <FaBars size={20}/>
                         </a>
                     </li>
                 ))}
