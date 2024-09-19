@@ -76,4 +76,8 @@ export const SubmitButton = styled.button.attrs(props => ({
 export const List = styled.ul`
    list-style:none;
    margin-top: 20px;
+
+   li{
+      
+   }
 `;
