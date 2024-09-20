@@ -78,6 +78,6 @@ export const List = styled.ul`
    margin-top: 20px;
 
    li{
-      
+     padding: 15px 0;
    }
 `;
