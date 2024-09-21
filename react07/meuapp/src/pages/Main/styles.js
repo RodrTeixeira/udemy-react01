@@ -79,5 +79,6 @@ export const List = styled.ul`
 
    li{
      padding: 15px 0;
+     display: flex;
    }
 `;
