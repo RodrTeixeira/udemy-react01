@@ -81,5 +81,6 @@ export const List = styled.ul`
      padding: 15px 0;
      display: flex;
      flex-direction: row;
+     align-items: center;
    }
 `;
