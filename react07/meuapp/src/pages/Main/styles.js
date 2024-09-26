@@ -87,5 +87,10 @@ export const List = styled.ul`
      & + li{
       border-top: 1px solid #eee;
      }
+
+     a{
+      
+     }
+
    }
 `;
