@@ -89,7 +89,7 @@ export const List = styled.ul`
      }
 
      a{
-      
+      color: #0D2636;
      }
 
    }
