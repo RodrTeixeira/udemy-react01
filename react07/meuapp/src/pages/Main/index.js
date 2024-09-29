@@ -68,7 +68,9 @@ export default function Main(){
             <list>
                 {repositorios.map(repo => (
                     <li key={repo.name}>
-                        <span>{repo.name}</span>
+                        <span>
+                            {repo.name}
+                        </span>
                         <a href="">
                             <FaBars size={20}/>
                         </a>
