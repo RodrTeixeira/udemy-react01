@@ -69,6 +69,9 @@ export default function Main(){
                 {repositorios.map(repo => (
                     <li key={repo.name}>
                         <span>
+                            <DeleteButton>
+                                
+                            </DeleteButton>
                             {repo.name}
                         </span>
                         <a href="">
