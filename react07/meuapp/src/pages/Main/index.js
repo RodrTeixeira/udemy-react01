@@ -1,5 +1,5 @@
 import React, {useState, useCallback} from "react";
-import {FaGithub, FaPlus, FaSpinner, FaBars} from "react-icons/fa";
+import {FaGithub, FaPlus, FaSpinner, FaBars, FaTrash} from "react-icons/fa";
 
 import {Container, Form, SubmitButton, List} from "./styles";
 
@@ -70,7 +70,7 @@ export default function Main(){
                     <li key={repo.name}>
                         <span>
                             <DeleteButton>
-                                
+
                             </DeleteButton>
                             {repo.name}
                         </span>
