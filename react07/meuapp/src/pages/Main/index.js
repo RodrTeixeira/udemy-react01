@@ -70,7 +70,7 @@ export default function Main(){
                     <li key={repo.name}>
                         <span>
                             <DeleteButton>
-                                <FaTrash/>
+                                <FaTrash size={14}/>
                             </DeleteButton>
                             {repo.name}
                         </span>
