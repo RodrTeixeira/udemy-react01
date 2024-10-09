@@ -96,4 +96,6 @@ export const List = styled.ul`
    }
 `;
 
-export const DeleteButton = styled.button
+export const DeleteButton = styled.button.attrs({
+   
+})
