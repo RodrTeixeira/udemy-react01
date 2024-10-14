@@ -99,5 +99,5 @@ export const List = styled.ul`
 export const DeleteButton = styled.button.attrs({
    type:'button' 
 })`
-
+   margin-left: 
 `;
