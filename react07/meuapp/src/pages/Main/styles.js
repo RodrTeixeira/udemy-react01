@@ -100,4 +100,5 @@ export const DeleteButton = styled.button.attrs({
    type:'button' 
 })`
    margin-left: 6px;
+   background: transparent;
 `;
