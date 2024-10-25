@@ -104,4 +104,5 @@ export const DeleteButton = styled.button.attrs({
    border: 0;
    padding: 8px 7px;
    outline: 0;
+   border-radius:
 `;
