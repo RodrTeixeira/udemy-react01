@@ -69,7 +69,7 @@ export default function Main(){
                 {repositorios.map(repo => (
                     <li key={repo.name}>
                         <span>
-                            <DeleteButton onClick={() => {}}>
+                            <DeleteButton onClick={() => }>
                                 <FaTrash size={14}/>
                             </DeleteButton>
                             {repo.name}
