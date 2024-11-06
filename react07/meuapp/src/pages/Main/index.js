@@ -43,7 +43,9 @@ export default function Main(){
         setNewRepo(e.target.value);
     }
 
-    const handleDelete = useCallback((repo)=> {}, [])
+    const handleDelete = useCallback((repo)=> {
+        const
+    }, [])
 
     return(
         <Container>
