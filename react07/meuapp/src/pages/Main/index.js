@@ -44,7 +44,7 @@ export default function Main(){
     }
 
     const handleDelete = useCallback((repo)=> {
-        const find = repositorios.filter()
+        const find = repositorios.filter(r => r.name)
     }, [])
 
     return(
