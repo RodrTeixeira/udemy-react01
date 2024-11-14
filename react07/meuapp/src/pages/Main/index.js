@@ -20,6 +20,9 @@ export default function Main(){
             setLoading(true);
 
             try{
+
+                
+
                 const response = await api.get(`repos/${newRepo}`);
 
                 const data = {
