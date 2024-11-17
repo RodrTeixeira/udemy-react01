@@ -21,7 +21,7 @@ export default function Main(){
 
             try{
 
-             if(newRepo ==)   
+             if(newRepo === '')   
 
                 const response = await api.get(`repos/${newRepo}`);
 
